@@ -1,0 +1,115 @@
+.hex1trnmt {
+    width: 240px;
+    height: 112px;
+    background: rgb(239, 79, 95);
+    position: relative;
+  }
+  .hex1trnmt:before, .hex1trnmt:after {
+    content: "";
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    position: absolute;
+  }
+  .hex1trnmt:before {
+    top: -50px;
+    border-bottom: 50px solid rgb(239, 79, 95);;
+  }
+  .hex1trnmt:after {
+    bottom: -50px;
+    border-top: 50px solid rgb(239, 79, 95);;
+  }
+  
+  .hex2trnmt {
+    background-color: #00000073;
+    -webkit-transform: scale(.8, .8);
+    -moz-transform: scale(.8, .8);
+    transform: scale(.8, .8);
+    z-index: 10;
+    width: 266px;
+    height: 145px;
+    position: relative;
+    top: -8px;
+    height: 129px;
+    left: -13px;
+  }
+  .hex2trnmt:before, .hex2trnmt:after {
+    content:"";
+    border-left: 134px solid transparent;
+    border-right: 134px solid transparent;
+    position: absolute;
+  }
+  .hex2trnmt:before {
+    border-bottom: 54px solid #00000073;
+    top: -54px;
+  }
+  .hex2trnmt:after {
+    border-top: 54px solid #00000073;
+    bottom: -54px;
+    /* border-top: 91px solid rgb(239, 79, 95);; */
+  }
+
+
+
+
+
+
+
+
+  .tournamentButton {
+    width: 130px;
+    height: 55px;
+    background: rgb(239, 79, 95);
+    position: relative;
+  }
+  .tournamentButton:before, .tournamentButton:after {
+    content: "";
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+    position: absolute;
+  }
+  .tournamentButton:before {
+    top: -26px;
+    border-bottom: 26px solid rgb(239, 79, 95);;
+  }
+  .tournamentButton:after {
+    bottom: -26px;
+    border-top: 26px solid rgb(239, 79, 95);;
+  }
+  
+  .tournamentButton p{
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+  .tornament-details{
+    box-shadow: 4px 4px 12px #00000073;
+    background-color: #00000073;
+    height: 80%;
+  }
+  
+  .tornament-details ul{
+    /* background-color: #141417b8; */
+    overflow-y: scroll;
+    list-style-type: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0px !important;
+    height: 80%;
+  }
+  
+  .tornament-details ul li{
+    margin: 2px auto;
+    width: 100%;
+  }
+
+
+  .tournaments-buttons-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }

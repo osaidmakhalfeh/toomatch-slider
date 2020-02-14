@@ -1,0 +1,75 @@
+
+
+.input-group>.input-group-prepend>.input-group-text{
+  width: 95px !important;
+  background: transparent;
+  border: navajowhite; 
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.editprofile .input-group input{
+  margin: 0px 50px;
+  padding: 5px 15px;
+  height: 30px;
+  width: 250px;
+  display: block;
+  color:#4a4242;
+  font-size: 1.2em;
+  position: relative;
+  box-sizing: padding-box;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  margin-left: 0px;
+  border-radius: 0px;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.editprofile .input-group select{
+  background: transparent;
+  font-family: 'Roboto', sans-serif !important;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 250px;
+  border-radius: 0px !important;
+  margin: 0px 50px !important;
+  padding: 5px 15px !important;
+  margin-left: 0px !important;
+  color:#4a4242;
+  font-size: 1.2em;
+}
+.editprofile .input-group select option{
+  background-color: #00000073;
+  font-size: 1.2em;
+}
+
+.editprofile .input-group input::placeholder {
+  color:#4a4242;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+
+.save-button{
+  width: 190px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif !important;
+
+  border:1px solid rgba(1, 1, 1, 0.2) !important;
+  box-shadow:0px 10px 20px -8px rgb(239, 79, 95) !important;
+  background:rgb(239, 79, 95) !important;
+  color: white !important;
+  text-transform: uppercase;
+}
+.editprofile .input-group input{
+   
+}
+
+
+.text-area-feedback{
+  width: 100%;
+  height: 100px;
+}

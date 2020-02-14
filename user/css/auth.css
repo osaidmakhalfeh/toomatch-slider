@@ -1,0 +1,145 @@
+
+
+.wrapper{
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, .5);
+  background-color: #00000029;
+  padding: 20px;
+  width: 95%;
+  height: 390px !important;
+  overflow-y: scroll;
+  padding-top: 0p;
+  overflow-x: hidden;
+}
+
+.reg-cont{
+  flex-direction: row;justify-content: center;
+ 
+}
+
+  input[type="text"],input[type="password"]{
+  margin:0px 50px;
+  padding:5px 15px;
+  height:30px;
+  width:250px;
+  display:block;
+  color:#4a4242;
+  font-size:1.2em;
+  position:relative;
+  box-sizing:padding-box;
+  background:transparent;
+  border:none;
+  border-bottom:2px solid #fff;
+  border-radius: 0px !important;
+  }
+
+  input[type="text"]::placeholder, input[type="password"]::placeholder, select {
+    color: #4a4242 !important;
+    font-size: 1em !important;
+  }
+
+  input[type="text"],input[type="password"]:focus{
+  outline:none;
+  }
+
+  select{
+    margin: 0px 50px;
+    padding: 5px 15px;
+    height: 30px;
+    width: 250px;
+    display: block;
+    color: #fff;
+    position: relative;
+    box-sizing: padding-box;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-size:1.2em !important;
+    padding-left: 10px !important;
+  }
+
+  option{
+    color: black !important;
+  }
+  input[type="submit"]{
+    margin:0 110px;
+    width:150px;
+    height:35px;
+    padding:5px;
+    background:rgb(239, 79, 95);
+    border:1px solid rgba(1, 1, 1, 0.2);
+    border-radius:10px;
+    box-shadow:0px 10px 20px -8px rgb(239, 79, 95);
+    color: black !important;
+    text-transform: uppercase;
+  }
+
+  input[type="submit"]:hover{
+    color: white !important;
+  }
+
+  input[type="submit"]:disabled{
+    background-color: white !important;
+    color: rgb(239, 79, 95) !important;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  .auth-lnk{
+    color: #4a4242;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  .auth-lnk:hover{
+    color: white !important;
+  }
+
+  /*************Shake animation**********/
+  .wrapper:hover {
+    /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both; */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  /*****************************/
+  @keyframes blink {
+  20% ,30% {
+          border:25px double ivory;
+           border-top-color:transparent;
+            border-bottom-color:transparent;
+          }
+  50%,70%{
+         border:25px double rgb(239, 79, 95);
+           border-top-color:transparent;
+            border-bottom-color:transparent;
+  
+  }
+  80%,90%,100%{
+            border:25px double #000;
+           border-top-color:transparent;
+            border-bottom-color:transparent;
+  
+  }       
+  
+  }
+ 

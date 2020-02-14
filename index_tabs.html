@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TooMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="user/css/style.css">
+  <link rel="stylesheet" href="user/css/bigbang.scss">
+  
+
+  
+<style>
+    .slider-container-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding-top: 8%;
+    }
+    .horizontal-card{
+        background: #00000029;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, .5);
+        height: 223px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 72%;
+    }
+    
+    .active-container{
+        /* width: 379px;
+        height: 300px; */
+        /* position: absolute;
+        background: red;
+        left: 36%; */
+    }
+    
+    .under-slider{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 110px;
+    }
+    
+    .under-slider a{
+        font-size: 18px;
+        color : rgb(247, 63, 82);
+        text-decoration: underline;
+    }
+    
+    .under-slider a:hover{
+        color: #00000073;
+    }
+    
+    </style>
+    
+    <link rel="stylesheet" href="user/css/thumbnail-slider.css">
+    
+    
+    <link rel="stylesheet" href="user/css/tournaments.css">
+    
+    <link rel="stylesheet" href="user/css/auth.css">
+    
+    <style>
+    .mySlides {display:none;height: 101px;}
+    
+    .mySlidesContainer{
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        z-index: 200;
+        width: 87%;
+        
+    }
+    </style>
+
+
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Semantic Ui Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+ 
+  <style>
+    #over-fl-mobile{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3000;
+      background: rgba(113, 107, 107, 0.8);
+      display: none;
+    }
+
+    #over-fl-mobile ul{
+      list-style-type: none;
+      padding-top: 20px;
+      padding: 0px;
+    }
+
+    #over-fl-mobile li{
+      padding: 20px 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    }
+    #over-fl-mobile li a{
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <nav id="flex-nav" class="navbar navbar-light">
+    <div id="logoBad">
+      <a class="navbar-brand" href="">
+        <img id="logo" src="user/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+    </div>
+    <div class="navbar-buttons">
+      <div class="nav-child">
+        <div class="nav-left" style="display: flex, flexDirection: 'column'">
+          <!-- <div class="says">
+            <h3>More than Tournaments!</h3>
+          </div> -->
+        </div>
+        <div class="nav-right">
+          <div class="other">
+            <div id="home-lnk" class="aone nav-link activebtn" style="margin-left: 14px;">
+              <a class="nav-link-text" href="">Home</a>
+            </div>
+            <div id="tournaments-lnk" class="nav-link atwo">
+              <a class="nav-link-text" href="">Browse</a>
+            </div>
+            <div id="gallary-lnk" class="nav-link atwo">
+              <a class="nav-link-text" href="">Gallery</a>
+            </div>
+         
+             
+                <div id="register-lnk" class="nav-link aone">
+                  <a class="nav-link-text" href="">Register</a>
+                </div>
+               
+                <div id="login-lnk" class="nav-link athree" style="padding-right: 7em;">
+                  <a class="nav-link-text" href="">Login</a>
+                </div>
+            
+        
+            <div id="login-lnk" class="nav-link athree" style="padding-right: 7em;">
+                  <a class="nav-link-text" href="" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout</a>
+            </div>
+            <form id="logout-form" action="" method="POST" style="display: none;">
+            
+            </form>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+</nav>
+<nav id="mobile-nav">
+  <div class="mobile">
+      <div class="mobile-logo-container">
+      <img id="mobile-logo" src="user/img/logoimg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+     </div>
+     <div style="    display: flex;flex-direction: column;justify-content: center;margin-left: -15px;">
+       <h1 style="color: rgb(239, 79, 95);">TooMatch</h1>
+     </div>
+      <div class="hamburger-menu">
+          <div class="bar"></div>	
+      </div>
+  </div>  
+
+  <div id="over-fl-mobile" class="med-mobile">
+      <ul>
+        <li>
+          <a class="nav-link-text" href="">Home</a>
+        </li>
+        <li>
+         <a class="nav-link-text" href="">Browse</a>
+        </li>
+        <li>
+         <a class="nav-link-text" href="">Gallery</a>
+        </li>
+          @guest
+              
+            <li><a class="nav-link-text" href="{{ url('register') }}">Register</a></li>
+        
+            <li><a class="nav-link-text" href="{{ route('login') }}">Login</a></li>
+  
+            @else
+            
+             <li> <a class="nav-link-text" href="{{ url('/profile') }}">Profile</a></li>
+              <li>
+                <a class="nav-link-text" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-formTwo').submit();">Logout</a>
+              </li>
+            <form id="logout-formTwo" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+            @endguest
+      </ul>
+             
+           
+              
+      
+            
+            
+          </div>
+  </div>
+</nav>
+
+
+<div id="views-cont" class="container @yield('view-class')" style="height: 100%">
+  
+
+
+
+
+<!-- here -->
+
+
+
+
+<div class="hero_container" style="margin-right: 7px;margin-bottom: 30px;">
+	<div class="hero">
+		<div class="hero_text">
+		   <h1>Tournament Details</h1>
+		</div>
+		<div class="hero_skewed--left">
+			<div class="unskewed--left">
+			</div>
+		</div>
+		<div class="hero_skewed--right">
+			<div class="unskewed--right">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="display: flex;flex-direction: row;justify-content: center;height: 90%;">
+    <div class="col-md-6" style="">
+        <div class="bd-example bd-example-tabs profile-tabs-contanier">
+            <ul class="nav nav-tabs profile-nav" id="myTab" role="tablist">
+                <li class="nav-item">
+                <a class="nav-link active show" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="home" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="prticipant-tab" data-toggle="tab" href="#prticipant" role="tab" aria-controls="profile" aria-selected="false">Prticipant</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="announcements-tab" data-toggle="tab" href="#announcements" role="tab" aria-controls="contact" aria-selected="false">Announcements</a>
+                </li>
+               
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade active show" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <img style="width: 99%;" src="{{ url('') }}/storage/{{ $data['tournament']->image }}" alt="">
+                </div>
+                <div class="tab-pane fade" id="prticipant" role="tabpanel" aria-labelledby="prticipant-tab">
+						
+						<!-- start Paricipant -->
+							<div class="ui comments">
+								<h3 class="ui dividing header">All Prticipants</h3>
+								@if(sizeof($data['subscriptions']) == 0)
+								<p>No subscribers until now!</p>
+								@endif
+
+								@foreach($data['subscriptions'] as $sub)
+								<div class="comment">
+									<a class="avatar">
+										<img class="circular " src="{{ url('') }}/storage/{{ $sub->myUser->image }}">
+									</a>
+									<div class="content">
+										<a class="author">{{ $sub->myUser->name }}</a>
+										<div class="metadata">
+											<span class="date">{{ $sub->date }}</span>
+										</div>
+										<div class="text">
+											{{ $sub->myUser->email }}, {{ $sub->myUser->mobile }}
+										</div>
+									</div>
+								</div>
+								@endforeach
+							</div>
+						<!-- Finish Paricipant -->
+                </div>
+                <div class="tab-pane fade" id="announcements" role="tabpanel" aria-labelledby="announcements-tab">
+				<!-- start announcements -->
+					<p>{{ $data['tournament']->announcement }}</p>
+				<!-- start announcements -->
+                </div>
+		</div>
+        </div>
+    </div>
+
+
+
+    <!-- Right Side of the page -->
+
+
+    <div class="col-md-6">
+    <div class="tabs-container" style="height: 100%">	
+		<div class="bd-example bd-example-tabs profile-tabs-contanier">
+		<ul class="nav nav-tabs profile-nav" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active show" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="home" aria-selected="false">Details</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="rules-tab" data-toggle="tab" href="#rules" role="tab" aria-controls="profile" aria-selected="true">Rules</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="prizes-tab" data-toggle="tab" href="#prizes" role="tab" aria-controls="contact" aria-selected="false">Prizes</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="schadule-tab" data-toggle="tab" href="#schadule" role="tab" aria-controls="contact" aria-selected="false">Schedual</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade active show" id="details" role="tabpanel" aria-labelledby="details-tab">
+				<h2 style="text-align: center;">{{ $data['tournament']->name }}</h2>
+				<ul class="info-bar-list">
+					<li>
+						<p class="title-p">Game</p>
+						<p>a</p>
+					</li>
+					<li>
+						<p class="title-p">Date</p>
+						<p>a</p>
+					</li>
+					<li>
+						<p class="title-p">Time</p>
+						<p>a</p>
+					</li>
+					<li>
+						<p class="title-p">Owner</p>
+						<p>a</p>
+					</li>
+				</ul>
+				<div style="display: flex; flex-direction: row; justify-content: center;">
+					a
+				</div> 
+			</div>
+			<div class="tab-pane fade" id="rules" role="tabpanel" aria-labelledby="rules-tab">
+				<p>a</p>
+			</div>
+			<div class="tab-pane fade" id="prizes" role="tabpanel" aria-labelledby="prizes-tab">
+				<p>a</p>
+			</div>
+			<div class="tab-pane fade" id="schadule" role="tabpanel" aria-labelledby="schadule-tab">
+				<p>a</p>
+			</div>
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				
+					<div class="col-md-12">
+						<div class="row">
+							<h1 style="text-align: center;width: 100%;margin-bottom: 20px;">Send Us Your Feedback/Suggestions</h1>
+						</div>
+						<div class="row" style="display: flex; flex-direction: column">
+							<form class="form-inline editprofile">
+								<div class="input-group mb-2 mr-sm-2" style="width: 100%;">
+									<div class="input-group-prepend">
+									<div class="input-group-text">
+										<h4>Your Note</h4>
+									</div>
+									<br>
+									</div>
+									<textarea class="text-area-feedback">
+
+									</textarea>
+								</div>
+							</form>
+							<div style="justify-content: flex-end;display: flex;padding-right: 8px;padding-top: 5px;">
+								<button class="logout-prem" onclick="regThus()">Send Feedback</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		</div>
+	</div>
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+  <!-- Footer Area -->
+<footer id="footer">
+    <div class="col-md-12">
+      <div class="row">
+
+        <div class="col-md-5" style="padding: 0px;">
+          <ul>
+            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/about') }}">About Us</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/policy') }}">Privacy Policy</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/terms') }}">Terms of Use</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/subscriptions') }}">Subscriptions</a></li>
+          </ul>
+      </div>
+
+      <div class="rights-reserved col-md-3">
+        <p style="color: #4a4242;">© All Rights reserved for Toomatch - <?php echo date("Y"); ?></p>
+      </div>
+  
+  <div class="media-cloud col-md-4">
+    <p style="color: #4a4242;">Powered by </p>
+    <a href="https://media-clouds.com/" target="_blank"><img src="user/img/mediaclouds.png" alt=""></a>
+  </div>
+  
+  
+  </div>
+  </div>
+</footer>
+  <!-- End Footer Area -->
+  <!-- Scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+  <script src="user/js/index.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+
+  <script>
+    $( document ).ready(function() {
+        $("@yield('activebtn')").addClass( "active-nav-link" );
+    });
+  </script>
+
+  <script>
+  (function () {
+	$('.hamburger-menu').on('click', function() {
+      $('.bar').toggleClass('animate');
+      var mobileNav = $('.mobile-nav');
+      mobileNav.toggleClass('hide show');
+    })
+  })();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $(".hamburger-menu").click(function(){
+      $("#over-fl-mobile").slideToggle("slow");
+    });
+  });
+  </script>
+
+  
+<script>
+    function removeContainer() {
+    var element = document.getElementById("views-cont");
+    element.className = element.className.replace(/\bcontainer\b/g, "");
+    }
+
+    removeContainer();
+</script>
+
+<script src="user/js/thumbnail-slider.js"></script>
+
+
+<script>
+   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            // document.getElementById("txtHint").innerHTML = this.responseText;
+
+            var innerValue = "<li style='display: inline-block; z-index: 1; width: 450px; height: 225px;'";
+
+            innerValue = innerValue + "<a class='thumb'";
+            innerValue = innerValue + "<a class='thumb' href={{ URL::asset('assets/user/img/slider/2.jpg') }}" + "style='background-image: url(&quot;img/8.jpg&quot;); cursor: pointer;'></a>";
+            innerValue = innerValue + "</li>";
+           
+            // document.getElementById("osaidd").text = "nnnnn";
+            // console.log("aa");
+            // document.getElementById("osaidd").innerHTML="yyyyyyyyyyyyyy";
+            // console.log("bbbbbbbbbbbbbbbb");
+        }
+    };
+    xmlhttp.open("GET", "{{ url('/api/top-tournaments') }}", true);
+    xmlhttp.send();
+
+</script>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+    }
+
+</script>
+
+<script>
+    function thum_click(id){
+        // console.log("tournament " + id)
+        document.getElementById('text-text').innerHTML = "<a style='color: rgb(239, 79, 95);font-weight: bolder;font-size: 19px;' href='{{ url('tournaments/') }}/"+id+"'>View Details</a>";
+    }
+</script>
+</body>
+</html>
+
+
+

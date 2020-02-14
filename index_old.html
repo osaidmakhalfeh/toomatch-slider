@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TooMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="user/css/style.css">
+  <link rel="stylesheet" href="user/css/bigbang.scss">
+  
+
+  
+<style>
+    .slider-container-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding-top: 8%;
+    }
+    .horizontal-card{
+        background: #00000029;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, .5);
+        height: 223px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 72%;
+    }
+    
+    .active-container{
+        /* width: 379px;
+        height: 300px; */
+        /* position: absolute;
+        background: red;
+        left: 36%; */
+    }
+    
+    .under-slider{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 110px;
+    }
+    
+    .under-slider a{
+        font-size: 18px;
+        color : rgb(247, 63, 82);
+        text-decoration: underline;
+    }
+    
+    .under-slider a:hover{
+        color: #00000073;
+    }
+    
+    </style>
+    
+    <link rel="stylesheet" href="user/css/thumbnail-slider.css">
+    
+    
+    <link rel="stylesheet" href="user/css/tournaments.css">
+    
+    <link rel="stylesheet" href="user/css/auth.css">
+    
+    <style>
+    .mySlides {display:none;height: 101px;}
+    
+    .mySlidesContainer{
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        z-index: 200;
+        width: 87%;
+        
+    }
+    </style>
+
+
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Semantic Ui Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+ 
+  <style>
+    #over-fl-mobile{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3000;
+      background: rgba(113, 107, 107, 0.8);
+      display: none;
+    }
+
+    #over-fl-mobile ul{
+      list-style-type: none;
+      padding-top: 20px;
+      padding: 0px;
+    }
+
+    #over-fl-mobile li{
+      padding: 20px 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    }
+    #over-fl-mobile li a{
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <nav id="flex-nav" class="navbar navbar-light">
+    <div id="logoBad">
+      <a class="navbar-brand" href="">
+        <img id="logo" src="user/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+    </div>
+    <div class="navbar-buttons">
+      <div class="nav-child">
+        <div class="nav-left" style="display: flex, flexDirection: 'column'">
+          <!-- <div class="says">
+            <h3>More than Tournaments!</h3>
+          </div> -->
+        </div>
+        <div class="nav-right">
+          <div class="other">
+            <div id="home-lnk" class="aone nav-link activebtn" style="margin-left: 14px;">
+              <a class="nav-link-text" href="">Home</a>
+            </div>
+            <div id="tournaments-lnk" class="nav-link atwo">
+              <a class="nav-link-text" href="">Browse</a>
+            </div>
+            <div id="gallary-lnk" class="nav-link atwo">
+              <a class="nav-link-text" href="">Gallery</a>
+            </div>
+         
+             
+                <div id="register-lnk" class="nav-link aone">
+                  <a class="nav-link-text" href="">Register</a>
+                </div>
+               
+                <div id="login-lnk" class="nav-link athree" style="padding-right: 7em;">
+                  <a class="nav-link-text" href="">Login</a>
+                </div>
+            
+        
+            <div id="login-lnk" class="nav-link athree" style="padding-right: 7em;">
+                  <a class="nav-link-text" href="" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout</a>
+            </div>
+            <form id="logout-form" action="" method="POST" style="display: none;">
+            
+            </form>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+</nav>
+<nav id="mobile-nav">
+  <div class="mobile">
+      <div class="mobile-logo-container">
+      <img id="mobile-logo" src="user/img/logoimg.png" width="30" height="30" class="d-inline-block align-top" alt="">
+     </div>
+     <div style="    display: flex;flex-direction: column;justify-content: center;margin-left: -15px;">
+       <h1 style="color: rgb(239, 79, 95);">TooMatch</h1>
+     </div>
+      <div class="hamburger-menu">
+          <div class="bar"></div>	
+      </div>
+  </div>  
+
+  <div id="over-fl-mobile" class="med-mobile">
+      <ul>
+        <li>
+          <a class="nav-link-text" href="">Home</a>
+        </li>
+        <li>
+         <a class="nav-link-text" href="">Browse</a>
+        </li>
+        <li>
+         <a class="nav-link-text" href="">Gallery</a>
+        </li>
+          @guest
+              
+            <li><a class="nav-link-text" href="{{ url('register') }}">Register</a></li>
+        
+            <li><a class="nav-link-text" href="{{ route('login') }}">Login</a></li>
+  
+            @else
+            
+             <li> <a class="nav-link-text" href="{{ url('/profile') }}">Profile</a></li>
+              <li>
+                <a class="nav-link-text" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-formTwo').submit();">Logout</a>
+              </li>
+            <form id="logout-formTwo" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+            @endguest
+      </ul>
+             
+           
+              
+      
+            
+            
+          </div>
+  </div>
+</nav>
+
+
+<div id="views-cont" class="container @yield('view-class')" style="height: 100%">
+  
+
+
+
+
+
+
+
+
+
+    
+<div class="row" id="main-full-slider" style="height: 100%;">
+    <div class="col-md-12" style="height: 100%;"> 
+        <div class="slider-container-section">
+
+
+
+        <div style="display: flex;flex-direction: row;justify-content: center;">
+        
+            <div class="horizontal-card">
+
+         
+            <div class="hex1">
+                <div class="hex2"></div>
+                    <a href="{{ url('tournaments/1') }}">
+                        <div class="hex1title">
+                            <p id="text-text">
+                                <a style='color: rgb(239, 79, 95);font-weight: bolder;font-size: 19px;'>View Details</a>
+                            </p>
+                        </div>
+                    </a>
+            </div>
+
+                <div id="thumbnail-slider">
+                    <div class="inner">
+                        <ul id="top-tornaments" style="touch-action: pan-y; transition-property: transform; transition-timing-function: cubic-bezier(0.2, 0.88, 0.5, 1); transition-duration: 0ms; transform: translateX(-135px);">
+                            <div id="osaidd">ff</div>
+                            
+                            <!-- <li style="display: inline-block; z-index: 1; width: 450px; height: 225px;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/2.jpg') }}" style="background-image: url(&quot;img/8.jpg&quot;); cursor: pointer;"></a>
+
+                            </li>
+                            <li style="display: inline-block; z-index: 1; width: 450px; height: 225px;" class="active">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/2.jpg') }}" style="background-image: url(&quot;img/8.jpg&quot;); cursor: pointer;"></a>
+
+                            </li> -->
+                            {!! $content !!}
+
+                            
+
+                            <!-- <li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/3.jpg') }}" style="background-image: url(&quot;img/9.jpg&quot;); cursor: pointer;"></a>
+                            </li> -->
+
+                            <!--
+                            <li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/4.jpg') }}" style="background-image: url(&quot;img/10.jpg&quot;); cursor: pointer;"></a>
+                            </li><li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/5.jpg') }}" style="background-image: url(&quot;img/11.jpg&quot;); cursor: pointer;"></a>
+                            </li><li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/6.jpg') }}" style="background-image: url(&quot;img/6.jpg&quot;); cursor: pointer;"></a>
+                            </li><li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/7.jpg') }}" style="background-image: url(&quot;img/7.jpg&quot;); cursor: pointer;"></a>
+                            </li><li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/8.jpg') }}" style="background-image: url(&quot;img/2.jpg&quot;); cursor: pointer;"></a>
+                            </li><li class="" style="display: inline-block; width: 450px; height: 225px; z-index: 0;">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/9.jpg') }}" style="background-image: url(&quot;img/3.jpg&quot;); cursor: pointer;"></a>
+                            </li><li style="display: inline-block; z-index: 0; width: 450px; height: 225px;" class="">
+                                <a class="thumb" href="{{ URL::asset('assets/user/img/slider/10.jpg') }}" style="background-image: url(&quot;img/4.jpg&quot;); cursor: pointer;"></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div id="thumbnail-slider-prev"></div>
+                    <div id="thumbnail-slider-next"></div>
+                    <div id="thumbnail-slider-pause-play"></div>
+                </div>
+
+                <!--End Slider -->
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="under-slider">
+                <a href="{{ url('/tournaments') }}"><h3>View All Tournaments</h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: flex;flex-direction: row;justify-content: center; margin-top: 75px;">
+				
+    <div class="hex1trnmt">
+        <div class="hex2trnmt"></div>
+        <div class="w3-content w3-display-container mySlidesContainer">
+            <img class="mySlides" src="{{ URL::asset('assets/user/img/slider/3.jpg') }}" style="width:100%">
+            <img class="mySlides" src="{{ URL::asset('assets/user/img/slider/3.jpg') }}" style="width:100%">
+            <img class="mySlides" src="{{ URL::asset('assets/user/img/slider/4.jpg') }}" style="width:100%">
+            <img class="mySlides" src="{{ URL::asset('assets/user/img/slider/5.jpg') }}" style="width:100%">
+
+            
+            
+
+            <button class="tournaments-arrs" onclick="plusDivs(-1)" style="position: absolute;left: -65px; top: 0px;">
+                <i class="fa fa-caret-left" aria-hidden="true"></i>
+            </button>
+            <button class="tournaments-arrs" onclick="plusDivs(1)" style="position: absolute;right: -65px; top: 0px;">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+            </button>
+        
+        
+        </div>
+    </div>
+
+</div>
+<div class="under-slider">
+                <a href="{{ url('/tournaments') }}"><h3>View All Tournaments</h3></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  <!-- Footer Area -->
+<footer id="footer">
+    <div class="col-md-12">
+      <div class="row">
+
+        <div class="col-md-5" style="padding: 0px;">
+          <ul>
+            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/about') }}">About Us</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/policy') }}">Privacy Policy</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/terms') }}">Terms of Use</a></li>
+            <div class="footer-list-break"></div>
+            <li><a href="{{ url('/subscriptions') }}">Subscriptions</a></li>
+          </ul>
+      </div>
+
+      <div class="rights-reserved col-md-3">
+        <p style="color: #4a4242;">© All Rights reserved for Toomatch - <?php echo date("Y"); ?></p>
+      </div>
+  
+  <div class="media-cloud col-md-4">
+    <p style="color: #4a4242;">Powered by </p>
+    <a href="https://media-clouds.com/" target="_blank"><img src="user/img/mediaclouds.png" alt=""></a>
+  </div>
+  
+  
+  </div>
+  </div>
+</footer>
+  <!-- End Footer Area -->
+  <!-- Scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+  <script src="user/js/index.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+
+  <script>
+    $( document ).ready(function() {
+        $("@yield('activebtn')").addClass( "active-nav-link" );
+    });
+  </script>
+
+  <script>
+  (function () {
+	$('.hamburger-menu').on('click', function() {
+      $('.bar').toggleClass('animate');
+      var mobileNav = $('.mobile-nav');
+      mobileNav.toggleClass('hide show');
+    })
+  })();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $(".hamburger-menu").click(function(){
+      $("#over-fl-mobile").slideToggle("slow");
+    });
+  });
+  </script>
+
+  
+<script>
+    function removeContainer() {
+    var element = document.getElementById("views-cont");
+    element.className = element.className.replace(/\bcontainer\b/g, "");
+    }
+
+    removeContainer();
+</script>
+
+<script src="user/js/thumbnail-slider.js"></script>
+
+
+<script>
+   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            // document.getElementById("txtHint").innerHTML = this.responseText;
+
+            var innerValue = "<li style='display: inline-block; z-index: 1; width: 450px; height: 225px;'";
+
+            innerValue = innerValue + "<a class='thumb'";
+            innerValue = innerValue + "<a class='thumb' href={{ URL::asset('assets/user/img/slider/2.jpg') }}" + "style='background-image: url(&quot;img/8.jpg&quot;); cursor: pointer;'></a>";
+            innerValue = innerValue + "</li>";
+           
+            // document.getElementById("osaidd").text = "nnnnn";
+            // console.log("aa");
+            // document.getElementById("osaidd").innerHTML="yyyyyyyyyyyyyy";
+            // console.log("bbbbbbbbbbbbbbbb");
+        }
+    };
+    xmlhttp.open("GET", "{{ url('/api/top-tournaments') }}", true);
+    xmlhttp.send();
+
+</script>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+    }
+
+</script>
+
+<script>
+    function thum_click(id){
+        // console.log("tournament " + id)
+        document.getElementById('text-text').innerHTML = "<a style='color: rgb(239, 79, 95);font-weight: bolder;font-size: 19px;' href='{{ url('tournaments/') }}/"+id+"'>View Details</a>";
+    }
+</script>
+</body>
+</html>
+
+
+
